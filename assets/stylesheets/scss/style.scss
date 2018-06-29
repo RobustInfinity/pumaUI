@@ -1,0 +1,1080 @@
+$orange: #FF0000;
+$fontColor: #333333;
+$grey: #EAEAEA;
+$fontFamily: 'Mina', sans-serif;    //font-family
+
+%font-format-shared{
+    color: $fontColor;
+    font-family: $fontFamily;
+}
+
+header{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    height:100%;;
+    .top-header{
+        height: 50%;
+        background-color: $grey;
+        .nav{
+            padding-right: 5%;
+            height: 100%;
+            .nav-item{
+                height: 40px;
+                font-weight: 400;
+                a{
+                    @extend %font-format-shared;
+                    border-right: 2px solid $orange;
+                    height: 25px;
+                    margin-top: 7px;
+                    line-height: 0.8em;
+                    transition: 150ms;
+                }
+                &:hover a{
+                    color: $orange;
+                }
+            }
+            li:nth-child(5){
+                width: 120px;
+                height: 35px;
+                font-weight: bold;
+            }
+            .dropdown{ 
+                .nav-link{
+                    border: none;
+                    //padding: 2px 2px;
+                }
+            }
+            .dropdown-menu{
+                display: none;
+                height: auto;
+                width: 1000px;
+                border-radius: 0px;
+                margin-top: 2%;
+                left: -700%;
+                .col-md-12{
+                    margin:0px;
+                    //padding: 10px;
+                }
+            }
+            .dropdown:hover .dropdown-menu{
+                display: block;
+                a{
+                    @extend %font-format-shared;
+                    border-right: none;
+                }
+                &:before{
+                    top: 0px;
+                    right: 10px;
+                    border-top: $orange;
+                    content: "";
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            .menu-list{
+                @extend %font-format-shared;
+                color: $orange;
+                height: auto;
+                margin:1.5% 0%;
+                padding: 0%;
+                .dropdown-item{
+                    width: 75%;
+                    line-height: 1em;
+                    height: 23px;
+                    padding-right: 2px;
+                    padding-left: 25px;
+                    //font-weight: bold;
+                    transition: 100ms;
+                    &:hover{
+                        color: $orange!important;
+                        background-color: white;
+                    }
+                }
+
+                .dropdown-divider{
+                    width: 80%;
+                    margin-left: 10%;
+                }
+                .heading{
+                    margin-left: 20px;
+                }
+            }
+        }
+        
+    }
+
+    .bottom-header{
+        @extend %font-format-shared;        
+        height: 50%;
+        box-shadow: 0 0 7px 0 #999;
+        z-index: 1;
+        .navbar{
+            padding: 0em 1em;
+            width: 80%;
+            margin-left: 10%;
+            //height: 20%;
+            background: white!important;
+            .navbar-brand{
+                z-index: 3;
+                height: 50px;
+                width: 50px;
+                margin-right: 80px;
+                margin-top: -50px;
+                img{
+                    height: 250%;
+                    width: 250%;
+                }
+            }
+            .nav-item{
+                height: auto;
+                width: auto;
+                line-height: 2em;
+                .nav-link{
+                    font-weight: bolder;
+                    font-size: 1em;
+                    color: $fontColor;
+                    transition: 200ms;
+                    width: auto;
+                    &:hover{
+                        color: white;
+                        background-color: $orange;
+                    }
+                }
+                .dropdown-menu{
+                    width: 950px;
+                    transition: 200ms linear;
+                    margin-top: 0em;
+                    border-radius: 0px;
+                }
+                &:hover .dropdown-menu{
+                    display: block;
+                    //transform: scaleY(1);
+                }
+                 &:hover .dropdown-toggle::after{
+                    display: inline-block;;
+                    position: absolute;
+                    width: 10%;
+                    height: auto;
+                    top: 100%;
+                    //right: 37%;
+                    left: 35%;
+                    z-index: 1005;
+                    border-style: solid!important;
+                    border-color: $orange transparent transparent!important;
+                    border-width: 8px 10px 0!important;
+                    transition: all 0.3s ease 0s;
+                }
+            }
+            .dropdown-toggle::after{
+                display: none;
+            }
+            li:nth-child(1){
+                .dropdown-menu{
+                    left:-10%;
+                }
+            }
+            li:nth-child(2){
+                .dropdown-menu{
+                    left:-71%;
+                }
+            }
+            li:nth-child(4){    
+                .dropdown-menu{
+                    left:-240%;
+                }
+            }
+            li:nth-child(5){     
+                .dropdown-menu{
+                    left:-215.5%;
+                }
+            }
+            li:nth-child(6){ 
+                .dropdown-menu{
+                    left:-680%;
+                }
+            }
+        } 
+        .menu-list{
+            padding: 1em 1em;
+            .dropdown-item{
+                padding: 0.4em 0.5em;
+                font-size: 0.9em;
+                line-height: 1.4;
+                transition: 100ms linear;
+                &:hover{
+                    background-color: white;
+                    color: $orange;
+                    font-size: 1em;
+                }
+            }
+            .heading{
+                font-size: 1em;
+                color: $orange;
+            }
+        }
+        .header-cart{
+            display: inline-block;
+            height: 45px;
+            width: 15%;
+            padding: 0.5em;
+            line-height: 2.5;
+            background-color: white;
+            font-size: 0.9em;
+            font-weight: bold;
+            a{
+                color:$orange;
+                transition: 200ms linear;
+                .label{
+                    font-size: 1em;
+                }
+                .count{
+                    color: black;
+                    transition: 200ms linear;
+                }
+                .cart-icon{
+                    height: 50px;
+                    width: 50px;
+                    margin-bottom: -15px;
+                    display: inline-block;
+                    transition: 200ms linear;
+                    background: url(https://d21kp9itql721v.cloudfront.net/cdn/450860/skin/frontend/rwd/default/images/shopping-bag-2.png) no-repeat;
+                }
+                &:hover{
+                    text-decoration: none;
+                    color: black;
+                    .cart-icon{
+                        transform: scaleX(1.1) scaleY(1.1);
+                    }
+                    .count{
+                        color: $orange;
+                    }
+                }
+            }
+        }
+        .form-inline{
+            margin: auto 5em;
+            .form-control{
+                padding: 0.35em 0.5em;
+                font-size: 0.8em;
+                line-height: 0.1;
+                border-radius: 0.6em;
+                border-color: $fontColor;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                transition: border-color .20s ease-in-out,box-shadow .20s ease-in-out;
+                &:focus{
+                    border-color: $orange;
+                    box-shadow: 0 0 0 0.1rem $orange;
+                }
+            }
+            .btn{
+                padding: 0.2em 0.5em;
+                border-radius: 0.6em;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+            }
+            .btn-outline-success{
+                color: $fontColor;
+                border-color:$fontColor;
+                transition: 100ms ease-in-out;
+                &:hover{
+                    background-color: $orange;
+                    color: white;
+                    border-color: $orange;
+                }
+                &:focus{
+                    box-shadow: 0 0 0 0.1rem $orange;
+                }
+                &:active{
+                    box-shadow: 0 0 0 0.1rem $orange!important;
+                }
+            }
+        }
+    }
+    .col-md-12{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+%carousel-button{
+            border-radius: 0px;
+            border-color: transparent;
+            height: 35px;
+            width: 120px;
+            padding: 0.3em 1em;
+            line-height: 1.8;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 1em;
+}
+%carousel-button-design{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        border-top: 4px solid #fff;
+        border-right: 4px solid #fff;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent;
+}
+.carousel{
+    @extend %font-format-shared;
+    height: 500px;
+    background-color: white;
+    color: $grey;
+    .carousel-inner{
+        height: 100%;
+        .carousel-item{
+            height: 100%;
+            background-color: $grey;
+        }
+    }
+    .carousel-indicators {
+        bottom: -50px;
+        li{
+            width:13px;
+            height: 13px;
+            border-radius: 50%;
+            margin: auto 20px;
+            background-color: $fontColor;
+            transition: 200ms linear;
+        }
+        .active{
+            transform: scaleX(1.7) scaleY(1.7);
+            background-color: $orange;
+        }
+    }
+    .carousel-control-next-icon{
+        height: 40px;
+        width: 40px;
+    }
+    .carousel-control-prev-icon{
+        height: 40px;
+        width: 40px;
+    }
+    h5{
+        font-size: 3em;
+        color: black;
+        font-weight: bold;
+    }
+    p{
+        font-size: 1.5em;
+        color: black;
+    }
+    .carousel_0{
+        .carousel-caption{
+        bottom: 100px;
+        left:-35%;
+        }
+        .btn{
+            @extend %carousel-button;
+            background-color: black;
+            &:hover{
+                background-color: $orange;
+                color: black;
+            }
+            &:active{
+                box-shadow: 0 0 0 0.2rem $orange;
+                background-color: $orange;
+                border-color: $orange!important;
+                color: black;
+            }
+            &:focus{
+                box-shadow: 0 0 0 0.2rem $orange!important;
+            }
+            &::after{
+                @extend %carousel-button-design;
+                right: 46.7%;
+            }
+        }
+    }
+    .carousel_1{
+        .carousel-caption{
+        bottom: 150px;
+        left:55%;
+        width: 35%;
+            h5{
+                color: white;
+                font-size: 3.5em;
+            }
+            p{
+                color: white;
+                font-weight: bold;
+            }
+        }
+        .btn{
+            @extend %carousel-button;
+            background-color: white;
+            color: black;
+            &:hover{
+                background-color: $orange;
+                color: white;
+            }
+            &:active{
+                box-shadow: 0 0 0 0.2rem $orange;
+                background-color: $orange;
+                border-color: $orange!important;
+            }
+            &:focus{
+                box-shadow: 0 0 0 0.2rem $orange!important;
+            }
+            &::after{
+                @extend %carousel-button-design;
+                right: 39%;
+                border-top-color: black;
+                border-right-color:    black;        
+            }
+        }
+    }
+    .carousel_2{
+        .carousel-caption{
+        bottom: 70px;
+        left:55%;
+            h5{
+                color: white;
+                font-size: 3.5em;
+            }
+            p{
+                color: white;
+                font-weight: bold;
+            }
+            .btn{
+                @extend %carousel-button;
+                background-color: white;
+                color: black;
+                &:hover{
+                    background-color: $orange;
+                    color: white;
+                }
+                &:active{
+                    box-shadow: 0 0 0 0.2rem $orange;
+                    background-color: $orange;
+                    
+                }
+                &:focus{
+                    box-shadow: 0 0 0 0.2rem $orange!important;
+                }
+                &::after{
+                    @extend %carousel-button-design;
+                    right: 37%;
+                    border-top-color: black;
+                    border-right-color:    black;  
+                }
+            }
+        }
+    }
+}
+%photo{
+        width: auto;
+        height: 85%;
+        overflow: hidden;
+}
+%caption{
+    width: auto;
+    height: 15%;
+}
+%heading{
+        text-align: center;
+        padding-top: 20px;
+        margin: 0px;
+        font-weight: bold;
+}
+%image{
+    height: 100%;
+    width: 100%;
+    transition: 200ms linear;
+}
+%anchor{
+        padding-left: 12.5%;
+        font-size: 0.9em;
+        color: $fontColor;
+        transition: 100ms linear;
+}
+.section-one{
+    @extend %font-format-shared;
+    height: 500px;
+    margin-top: 8%;
+    margin-bottom: 3%;
+    .row{
+        height: 100%;
+    }
+    .heading{
+        height: 15%;
+        padding: 1%;
+        text-align: center;
+        h2{
+            font-size: 2.5em;
+            font-weight: bolder;
+            letter-spacing: 0.1em;
+            color: black;
+        }
+    }
+    .first-block{
+        height: 85%;
+        padding: 0px;
+        .photo{
+            @extend %photo;
+            img{
+               @extend %image;
+            }
+        }
+        .caption{
+            @extend %caption;
+            h4{
+                @extend %heading;
+            }
+            a{
+                @extend %anchor;
+                &:hover{
+                    color: $orange;
+                }
+            }
+        }
+        &:hover img{
+            transform: scaleX(1.1) scaleY(1.1);
+        }
+    }
+    .second-block{
+        height: 85%;
+        padding: 0px;
+        .photo{
+            @extend %photo;
+            img{
+                @extend %image;
+            }
+        }
+        .caption{
+            @extend %caption;
+            h4{
+                @extend %heading;
+            }
+            a{
+                @extend %anchor;
+                padding-left: 70px;
+                     &:hover{
+                        color: $orange;
+                    }
+            }
+        }
+        &:hover img{
+            transform: scaleX(1.1) scaleY(1.1);
+        }
+    }
+    .third-block{
+        height: 85%;
+        padding: 0px;
+        .photo{
+            @extend %photo;
+            img{
+                @extend %image;
+            }
+        }
+        .caption{
+            @extend %caption;
+            h4{
+                @extend %heading;
+            }
+            a{
+                @extend %anchor;
+                padding-left: 70px;
+                     &:hover{
+                        color: $orange;
+                    }
+            }
+        }
+        &:hover img{
+            transform: scaleX(1.1) scaleY(1.1);
+        }
+    }
+}
+$padding        : 8px;
+.section-two{
+    height: 350px;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    .row{
+        height: 100%;
+    }
+    .heading{
+        @extend %font-format-shared;
+        position: absolute;
+        height: 15%;
+        top: -12%;
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+    }
+    $carouselHeight : 300px;
+
+
+
+        .carousel{ 
+        display:block; 
+        position: absolute;
+        -webkit-transform: translateZ(0); 
+        /*  for demo only */
+        top:0; right:0; bottom:0; left:0;
+        width:92%; 
+        height:$carouselHeight;
+        min-width:550px;
+        margin:auto;
+        
+        /********************/
+        
+        height:$carouselHeight; 
+        -webkit-overflow-scrolling:touch;
+        
+            .touch &{ overflow:auto; } /* for tablets */
+        
+            &:before, &:after{ 
+            content:'';
+            opacity:0; 
+            position:absolute; 
+            top:0;
+            bottom:0;
+            z-index:2;
+            width:50px;
+            font-size:80px;
+            line-height:$carouselHeight - 10;
+            font-family:arial;
+            color:$orange;
+            font-weight:bold;
+            pointer-events:none;
+            transition:0.2s ease-out; 
+            }
+            &:before{ 
+            content:'\2039'; 
+            left:0; text-align:left; 
+            }
+            &:after{ 
+            content:'\203A'; 
+            right:0; text-align:right;
+            text-indent:40px;
+            }
+        
+            &.right:after, &.left:before{ 
+            opacity:1;
+            }
+        
+            &.right{
+                &:after{ right:0; text-indent:60px;
+                }
+            }
+            &.left{
+                &:before{ left:0; text-indent:-40px; }
+            }
+        
+            > a{ 
+            position:absolute; 
+            margin:0; top:0; bottom:0; 
+            color:#CCC; 
+            font-size:1.5em; 
+            transition:0.1s;
+                &:hover{ color:#FFF; }
+                &.prev{ left:-20px; }
+                &.next{ right:-20px; }
+            }
+                    > .indicator{  
+                    pointer-events:none;
+                    position:absolute; 
+                    z-index:4;
+                    bottom:0; left:0;
+                    height:4px;
+                    border-radius:10px;
+                    opacity:0;
+                    transition:opacity 0.2s, bottom 0.2s;
+                    
+                
+                    &:hover{  
+                    > .indicator{ opacity:1; bottom:-10px; }
+                    }
+                }
+        
+            > .wrap{ overflow:hidden; border-radius:5px;
+            > ul{ 
+                list-style:none; 
+                white-space:nowrap; 
+                height:$carouselHeight;
+                padding-left: 0px;
+                > li{ 
+                    display:inline-block; 
+                    vertical-align:middle; 
+                    height:100%; 
+                    width: 25%;
+                    margin:0 0 0 5px; 
+                    position:relative; 
+                    overflow:hidden; 
+                    transition:0.25s ease-out;
+                    a{
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                    
+                    &:first-child{ margin:0; }
+                    > img{ 
+                    display:block; 
+                    height:80%; 
+                    width: 100%;
+                    margin:auto; 
+                    position:relative; 
+                    z-index:1; 
+                    transition:1s ease; 
+                    }
+                    .caption{
+                        height: 20%;
+                        background-color: white;
+                        color: black!important;
+                        display: inline-block;
+                        div{
+                            font-size: 0.4em;
+                            height: 45%;
+                            width: 100%;
+                            z-index: 5;
+                            text-align: center;
+                            padding-top: 10px;
+                            p{
+                                font-size: 2.5em;
+                                word-spacing: 1em;
+                                letter-spacing: 0.1em;
+                                color: $orange;
+                                font-weight: bold;
+                                del{
+                                    color: $fontColor;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    border: 1px solid $fontColor;
+                }
+                }
+            }
+            }
+        }    
+}
+.section-three{
+    @extend %font-format-shared;
+    height: 600px;
+    margin-top: 8%;
+    margin-bottom: 5%;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    .btn{
+        position: absolute;
+        bottom: 10px;
+        left: 44%;
+        @extend %carousel-button;
+        background-color: $orange;
+        &:hover{
+            background-color: $orange;
+            color: black;
+        }
+        &:active{
+            box-shadow: 0 0 0 0.2rem $orange;
+            background-color: $orange!important;
+            border-color: $orange!important;
+            color: black;
+        }
+        &:focus{
+            box-shadow: 0 0 0 0.2rem $orange!important;
+        }
+        &::after{
+            @extend %carousel-button-design;
+        }
+    }
+}
+.section-four{
+    @extend %font-format-shared;
+    height: 400px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    .row{
+        height: 100%;
+        .heading{
+            @extend %heading;
+            font-size: 2.3em;
+            padding-top: 0px;
+            height: 15%;
+            color: black;
+            font-weight: bold;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+        .first-block{
+            padding: 0px;
+            height: 85%;
+            transition: 150ms linear;
+            img{
+                height: 80%;
+                width: 80%;
+            }
+            &:hover{
+                transform: scaleX(1.1) scaleY(1.1);
+            }
+        }
+        .second-block{
+            padding: 0px;
+            height: 85%;
+            transition: 150ms linear;
+            img{
+                height: 80%;
+                width: 80%;
+            }
+            &:hover{
+                transform: scaleX(1.1) scaleY(1.1);
+            }
+        }
+        .third-block{
+            padding: 0px;
+            height: 85%;
+            transition: 150ms linear;
+            img{
+                height: 80%;
+                width: 80%;
+            }
+            &:hover{
+                transform: scaleX(1.1) scaleY(1.1);
+            }
+        }
+    }
+}
+.section-five{
+    height: 300px;
+    border: 1px solid $grey;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    .row{
+        height: 100%;
+        .left-block{
+            height: 100%;
+            .first-block{
+                height: 100%;
+                background-color: white;
+                img{
+                    position: absolute;
+                    top: 100px;
+                    left: 55%;
+                }
+            }
+            .second-block{
+                @extend %font-format-shared;
+                height: 100%;
+                padding: 0px;
+                .form-inline{
+                    position: absolute;
+                    top: 35%;
+                    h5{
+                        font-size: 1em;
+                        font-weight: bold;
+                        padding-left: 10px;
+                    }
+                    .form-control{
+                        width: 76%;
+                        border-radius: 0px;
+                        border-color: transparent;
+                        background-color: $grey;
+                        font-size: 0.8em;
+                        font-weight: bold;
+                        padding-left: 5px;
+                        &:focus{
+                            box-shadow: none;
+                        }
+                    }
+                    .btn{
+                        @extend %carousel-button;
+                        width:30px; 
+                        background-color: $orange;
+                        padding-left: 5px;
+                        font-size: 0.9em;
+                        line-height: 2;
+                        color:white;
+                        height: 31px;
+                        border:0px;
+                        &:focus{
+                            box-shadow: none;
+                            background-color: black;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .right-block{
+            height: 100%;
+            border-left: 1px solid $orange;
+            .first-block{
+                @extend %font-format-shared;
+                height: 100%;
+                padding: 0px;
+                .form-inline{
+                    position: absolute;
+                    top: 35%;
+                    left:5%;
+                    h5{
+                        font-size: 1em;
+                        font-weight: bold;
+                        padding-left: 10px;
+                    }
+                    .form-control{
+                        border-radius: 0px;
+                        border-color: transparent;
+                        background-color: $grey;
+                        font-size: 0.8em;
+                        font-weight: 800;
+                        width: 78%;
+                        padding-left: 5px;
+                        &:focus{
+                            box-shadow: none;
+                        }
+                    }
+                    .btn{
+                        @extend %carousel-button;
+                        width:30px; 
+                        background-color: $orange;
+                        padding-left: 5px;
+                        font-size: 0.9em;
+                        line-height: 2;
+                        color:white;
+                        height: 31px;
+                        &:focus{
+                            box-shadow: none;
+                            background-color: black;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .second-block{
+                height: 100%;
+                background-color: white;
+                img{
+                    position: absolute;
+                    top: 100px;
+                    left: 0%;
+                }
+            }
+        }
+    }
+
+}
+footer{
+    height: 470px;
+    //background-color: yellow;
+    @extend %font-format-shared;
+    .top-footer{
+        height: 100%;
+        .row{
+            height: 100%;
+            .block_one{
+                height: 100%;
+                img{
+                    position: absolute;
+                    top:10%;
+                }
+                span{
+                    position: absolute;
+                    top: 28%;
+                    font-size: 0.6em;
+                    color: $fontColor;
+                    font-weight: bold;
+                }
+                h4{
+                    position: absolute;
+                    top:38%;
+                    font-size: 0.8em;
+                    font-weight: bold;
+                    color: $fontColor;
+                }
+                h5{
+                    position: absolute;
+                    top: 43%;
+                    font-size: 1em;
+                }
+            }
+            .block_two{
+                height:100%;
+                //background-color: rosybrown;
+                ul{
+                    position: absolute;
+                    top:10%;
+                    list-style: none;
+                    font-weight: bold;
+                    h5{
+                        font-size: 1em;
+                    }
+                    li{
+                        font-size: 0.8em;
+                        a{
+                            text-decoration: none;
+                            color: $fontColor;
+                            transition: 100ms linear;
+                            &:hover{
+                                color: $orange;
+                            }
+                        }
+                    }
+                }
+                .list_two{
+                    position: absolute;
+                    top:65%;
+                    h6{
+                       // width:50%;
+                        height: auto;
+                        margin-right: 0px;
+                        font-size: 1.1em;
+                        font-weight: bold;
+                        color: $fontColor;
+                    }
+                    img{
+                        // height: 10%;
+                        // width: 10%;
+                        position: absolute;
+                        top: -10px;
+                        right: 10px;
+                    }
+                }
+
+            }
+            .block_three{
+                height: 100%;
+                row{
+                    height: 100%;
+                    width: 100%;
+                }
+                .heading{
+                    position: absolute;
+                    top: 10%;
+                    h5{
+                    font-size: 0.8em;
+                    }
+                }
+                .social-links{
+                    position: absolute;
+                    top: 18%;
+                    padding: 0px;
+                }
+                .social{
+                    height: 40px;
+                    padding: 10px;
+                    // text-align: center;
+                    margin: 0px;
+                    margin-bottom: 5px;
+                    a{
+                        i{
+                            font-size: 1.5em;
+                            color: $orange;
+                            transition: 250ms linear;
+                        }
+                        &:hover i{
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
